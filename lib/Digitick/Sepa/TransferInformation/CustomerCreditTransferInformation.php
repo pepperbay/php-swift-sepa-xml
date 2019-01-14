@@ -22,6 +22,8 @@
 
 namespace Digitick\Sepa\TransferInformation;
 
+use Digitick\Common\TransferInformation\BaseTransferInformation;
+
 class CustomerCreditTransferInformation extends BaseTransferInformation
 {
     /**

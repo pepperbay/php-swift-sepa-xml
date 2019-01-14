@@ -25,7 +25,7 @@ namespace Digitick\Common\DomBuilder;
 use Digitick\Common\GroupHeader;
 use Digitick\Common\PaymentInformation;
 use Digitick\Common\TransferFile\TransferFileInterface;
-use Digitick\Sepa\TransferInformation\TransferInformationInterface;
+use Digitick\Common\TransferInformation\TransferInformationInterface;
 
 /**
  * Used to build the Dom-structure for the different types of SEPA files

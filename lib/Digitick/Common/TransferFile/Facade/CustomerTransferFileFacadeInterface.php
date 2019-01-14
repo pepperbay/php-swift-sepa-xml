@@ -23,7 +23,7 @@
 namespace Digitick\Common\TransferFile\Facade;
 
 use Digitick\Common\PaymentInformation;
-use Digitick\Sepa\TransferInformation\TransferInformationInterface;
+use Digitick\Common\TransferInformation\TransferInformationInterface;
 
 interface CustomerTransferFileFacadeInterface
 {

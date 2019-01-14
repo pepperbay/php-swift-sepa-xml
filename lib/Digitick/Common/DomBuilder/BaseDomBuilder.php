@@ -23,7 +23,7 @@
 namespace Digitick\Common\DomBuilder;
 
 use Digitick\Common\GroupHeader;
-use Digitick\Sepa\TransferInformation\TransferInformationInterface;
+use Digitick\Common\TransferInformation\TransferInformationInterface;
 
 abstract class BaseDomBuilder implements DomBuilderInterface
 {
