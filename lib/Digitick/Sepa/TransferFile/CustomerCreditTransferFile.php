@@ -42,7 +42,7 @@ class CustomerCreditTransferFile extends BaseTransferFile
     /**
      * validate the transferfile
      *
-     * @throws \Digitick\Sepa\Exception\InvalidTransferTypeException
+     * @throws \Digitick\Common\Exception\InvalidTransferTypeException
      */
     public function validate()
     {
