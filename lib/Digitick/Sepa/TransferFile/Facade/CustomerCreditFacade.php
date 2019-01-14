@@ -2,7 +2,7 @@
 
 namespace Digitick\Sepa\TransferFile\Facade;
 
-use Digitick\Sepa\Exception\InvalidArgumentException;
+use Digitick\Common\Exception\InvalidArgumentException;
 use Digitick\Sepa\PaymentInformation;
 use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
 

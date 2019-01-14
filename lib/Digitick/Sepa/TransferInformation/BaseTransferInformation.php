@@ -23,7 +23,7 @@
 namespace Digitick\Sepa\TransferInformation;
 
 use Digitick\Sepa\DomBuilder\DomBuilderInterface;
-use Digitick\Sepa\Exception\InvalidArgumentException;
+use Digitick\Common\Exception\InvalidArgumentException;
 use Digitick\Sepa\Util\StringHelper;
 
 class BaseTransferInformation implements TransferInformationInterface

@@ -9,7 +9,7 @@
 
 namespace tests\Unit;
 
-use Digitick\Sepa\Exception\InvalidArgumentException;
+use Digitick\Common\Exception\InvalidArgumentException;
 use Digitick\Sepa\PaymentInformation;
 use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
 use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;

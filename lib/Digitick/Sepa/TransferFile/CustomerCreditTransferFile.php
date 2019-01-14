@@ -22,8 +22,8 @@
 
 namespace Digitick\Sepa\TransferFile;
 
-use Digitick\Sepa\Exception\InvalidTransferFileConfiguration;
-use Digitick\Sepa\Exception\InvalidTransferTypeException;
+use Digitick\Common\Exception\InvalidTransferFileConfiguration;
+use Digitick\Common\Exception\InvalidTransferTypeException;
 use Digitick\Sepa\PaymentInformation;
 use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
 

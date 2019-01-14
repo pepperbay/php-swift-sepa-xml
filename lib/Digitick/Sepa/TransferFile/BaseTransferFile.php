@@ -23,7 +23,7 @@
 namespace Digitick\Sepa\TransferFile;
 
 use Digitick\Sepa\DomBuilder\DomBuilderInterface;
-use Digitick\Sepa\Exception\InvalidTransferFileConfiguration;
+use Digitick\Common\Exception\InvalidTransferFileConfiguration;
 use Digitick\Sepa\GroupHeader;
 use Digitick\Sepa\PaymentInformation;
 
