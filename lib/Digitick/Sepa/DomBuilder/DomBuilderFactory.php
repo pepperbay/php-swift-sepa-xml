@@ -23,7 +23,7 @@
 namespace Digitick\Sepa\DomBuilder;
 
 use Digitick\Common\Exception\InvalidArgumentException;
-use Digitick\Sepa\TransferFile\TransferFileInterface;
+use Digitick\Common\TransferFile\TransferFileInterface;
 
 class DomBuilderFactory
 {

@@ -25,10 +25,10 @@ namespace Digitick\Swift\TransferFile\Factory;
 use Digitick\Swift\DomBuilder\CustomerCreditTransferDomBuilder;
 use Digitick\Swift\DomBuilder\CustomerDirectDebitTransferDomBuilder;
 use Digitick\Common\GroupHeader;
-use Digitick\Sepa\TransferFile\CustomerCreditTransferFile;
+use Digitick\Common\TransferFile\CustomerCreditTransferFile;
 use Digitick\Sepa\TransferFile\Facade\CustomerCreditFacade;
 use Digitick\Sepa\TransferFile\Facade\CustomerDirectDebitFacade;
-use Digitick\Sepa\TransferFile\CustomerDirectDebitTransferFile;
+use Digitick\Common\TransferFile\CustomerDirectDebitTransferFile;
 
 class TransferFileFacadeFactory
 {

@@ -25,7 +25,7 @@ namespace tests;
 use Digitick\Sepa\DomBuilder\CustomerCreditTransferDomBuilder;
 use Digitick\Common\GroupHeader;
 use Digitick\Common\PaymentInformation;
-use Digitick\Sepa\TransferFile\CustomerCreditTransferFile;
+use Digitick\Common\TransferFile\CustomerCreditTransferFile;
 use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
 
 /**

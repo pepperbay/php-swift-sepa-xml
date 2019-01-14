@@ -25,8 +25,8 @@ namespace tests\Unit;
 use Digitick\Sepa\DomBuilder\DomBuilderFactory;
 use Digitick\Common\GroupHeader;
 use Digitick\Common\PaymentInformation;
-use Digitick\Sepa\TransferFile\CustomerCreditTransferFile;
-use Digitick\Sepa\TransferFile\CustomerDirectDebitTransferFile;
+use Digitick\Common\TransferFile\CustomerCreditTransferFile;
+use Digitick\Common\TransferFile\CustomerDirectDebitTransferFile;
 use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
 use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
 

@@ -26,7 +26,7 @@ use Digitick\Sepa\DomBuilder\CustomerDirectDebitTransferDomBuilder;
 use Digitick\Common\Exception\InvalidTransferFileConfiguration;
 use Digitick\Common\GroupHeader;
 use Digitick\Common\PaymentInformation;
-use Digitick\Sepa\TransferFile\CustomerDirectDebitTransferFile;
+use Digitick\Common\TransferFile\CustomerDirectDebitTransferFile;
 use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
 
 class TestFileSanityCheckTest extends \PHPUnit_Framework_TestCase

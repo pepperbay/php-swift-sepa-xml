@@ -20,13 +20,12 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa\TransferFile;
+namespace Digitick\Common\TransferFile;
 
 use Digitick\Common\Exception\InvalidTransferFileConfiguration;
 use Digitick\Common\Exception\InvalidTransferTypeException;
 use Digitick\Common\PaymentInformation;
 use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
-use Digitick\Common\TransferFile\BaseTransferFile;
 
 class CustomerDirectDebitTransferFile extends BaseTransferFile
 {
