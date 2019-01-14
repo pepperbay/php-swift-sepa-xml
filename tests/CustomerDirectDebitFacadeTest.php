@@ -22,7 +22,7 @@
 
 namespace tests;
 
-use Digitick\Sepa\PaymentInformation;
+use Digitick\Common\PaymentInformation;
 use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
 
 class CustomerDirectDebitFacadeTest extends \PHPUnit_Framework_TestCase

@@ -23,7 +23,7 @@
 namespace Digitick\Sepa\TransferFile\Facade;
 
 use Digitick\Common\Exception\InvalidArgumentException;
-use Digitick\Sepa\PaymentInformation;
+use Digitick\Common\PaymentInformation;
 use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
 use Digitick\Sepa\TransferInformation\TransferInformationInterface;
 use Digitick\Common\TransferFile\Facade\BaseCustomerTransferFileFacade;

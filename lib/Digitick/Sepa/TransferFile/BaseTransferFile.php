@@ -25,7 +25,7 @@ namespace Digitick\Sepa\TransferFile;
 use Digitick\Common\DomBuilder\DomBuilderInterface;
 use Digitick\Common\Exception\InvalidTransferFileConfiguration;
 use Digitick\Common\GroupHeader;
-use Digitick\Sepa\PaymentInformation;
+use Digitick\Common\PaymentInformation;
 
 abstract class BaseTransferFile implements TransferFileInterface
 {

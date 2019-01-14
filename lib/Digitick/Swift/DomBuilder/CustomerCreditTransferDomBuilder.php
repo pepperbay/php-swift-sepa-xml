@@ -22,7 +22,7 @@
 
 namespace Digitick\Swift\DomBuilder;
 
-use Digitick\Sepa\PaymentInformation;
+use Digitick\Common\PaymentInformation;
 use Digitick\Sepa\TransferFile\TransferFileInterface;
 use Digitick\Common\GroupHeader;
 use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;

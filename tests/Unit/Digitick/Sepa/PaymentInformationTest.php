@@ -6,7 +6,7 @@
 
 namespace Unit\Digitick\Sepa;
 
-use Digitick\Sepa\PaymentInformation;
+use Digitick\Common\PaymentInformation;
 
 class PaymentInformationTest extends \PHPUnit_Framework_TestCase
 {

@@ -23,7 +23,7 @@
 namespace Digitick\Common\DomBuilder;
 
 use Digitick\Common\GroupHeader;
-use Digitick\Sepa\PaymentInformation;
+use Digitick\Common\PaymentInformation;
 use Digitick\Sepa\TransferFile\TransferFileInterface;
 use Digitick\Sepa\TransferInformation\TransferInformationInterface;
 

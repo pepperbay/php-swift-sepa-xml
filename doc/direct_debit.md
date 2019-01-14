@@ -1,7 +1,7 @@
 ##Sample Usage DirectDebit with Factory
 ```php
 use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
-use Digitick\Sepa\PaymentInformation;
+use Digitick\Common\PaymentInformation;
 
 //Set the initial information
 // third parameter 'pain.008.003.02' is optional would default to 'pain.008.002.02' if not changed
@@ -38,7 +38,7 @@ $directDebit->asXML();
 ##Sample Usage DirectDebit with Factory and Custom Header
 ```php
 use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
-use Digitick\Sepa\PaymentInformation;
+use Digitick\Common\PaymentInformation;
 use Digitick\Common\GroupHeader;
 
 //Set the custom header (Spanish banks example) information
