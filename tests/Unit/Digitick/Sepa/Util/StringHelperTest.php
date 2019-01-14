@@ -2,7 +2,7 @@
 
 namespace Tests\Unit\Digitick\Sepa\Util;
 
-use Digitick\Sepa\Util\StringHelper;
+use Digitick\Common\Util\StringHelper;
 
 /**
  * Unit test for StringHelper

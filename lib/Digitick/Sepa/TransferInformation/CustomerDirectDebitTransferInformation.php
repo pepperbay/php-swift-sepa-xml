@@ -22,7 +22,7 @@
 
 namespace Digitick\Sepa\TransferInformation;
 
-use Digitick\Sepa\Util\StringHelper;
+use Digitick\Common\Util\StringHelper;
 
 class CustomerDirectDebitTransferInformation extends BaseTransferInformation
 {

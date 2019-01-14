@@ -25,7 +25,7 @@ namespace Digitick\Sepa;
 use Digitick\Common\DomBuilder\DomBuilderInterface;
 use Digitick\Common\Exception\InvalidArgumentException;
 use Digitick\Sepa\TransferInformation\TransferInformationInterface;
-use Digitick\Sepa\Util\StringHelper;
+use Digitick\Common\Util\StringHelper;
 
 class PaymentInformation
 {
