@@ -26,6 +26,7 @@ use Digitick\Common\Exception\InvalidArgumentException;
 use Digitick\Sepa\PaymentInformation;
 use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
 use Digitick\Sepa\TransferInformation\TransferInformationInterface;
+use Digitick\Common\TransferFile\Facade\BaseCustomerTransferFileFacade;
 
 class CustomerDirectDebitFacade extends BaseCustomerTransferFileFacade
 {

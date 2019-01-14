@@ -20,7 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa\TransferFile\Facade;
+namespace Digitick\Common\TransferFile\Facade;
 
 use Digitick\Common\DomBuilder\BaseDomBuilder;
 use Digitick\Sepa\TransferFile\TransferFileInterface;

@@ -20,7 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa\TransferFile\Facade;
+namespace Digitick\Common\TransferFile\Facade;
 
 use Digitick\Sepa\PaymentInformation;
 use Digitick\Sepa\TransferInformation\TransferInformationInterface;
