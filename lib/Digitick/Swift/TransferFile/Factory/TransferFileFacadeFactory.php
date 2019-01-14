@@ -26,8 +26,8 @@ use Digitick\Swift\DomBuilder\CustomerCreditTransferDomBuilder;
 use Digitick\Swift\DomBuilder\CustomerDirectDebitTransferDomBuilder;
 use Digitick\Common\GroupHeader;
 use Digitick\Common\TransferFile\CustomerCreditTransferFile;
-use Digitick\Sepa\TransferFile\Facade\CustomerCreditFacade;
-use Digitick\Sepa\TransferFile\Facade\CustomerDirectDebitFacade;
+use Digitick\Common\TransferFile\Facade\CustomerCreditFacade;
+use Digitick\Common\TransferFile\Facade\CustomerDirectDebitFacade;
 use Digitick\Common\TransferFile\CustomerDirectDebitTransferFile;
 
 class TransferFileFacadeFactory

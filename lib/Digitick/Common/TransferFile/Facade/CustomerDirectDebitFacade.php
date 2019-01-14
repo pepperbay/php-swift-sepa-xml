@@ -20,13 +20,12 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa\TransferFile\Facade;
+namespace Digitick\Common\TransferFile\Facade;
 
 use Digitick\Common\Exception\InvalidArgumentException;
 use Digitick\Common\PaymentInformation;
 use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
 use Digitick\Common\TransferInformation\TransferInformationInterface;
-use Digitick\Common\TransferFile\Facade\BaseCustomerTransferFileFacade;
 
 class CustomerDirectDebitFacade extends BaseCustomerTransferFileFacade
 {
