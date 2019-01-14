@@ -22,7 +22,7 @@
 
 namespace Digitick\Sepa\TransferInformation;
 
-use Digitick\Sepa\DomBuilder\DomBuilderInterface;
+use Digitick\Common\DomBuilder\DomBuilderInterface;
 
 interface TransferInformationInterface
 {

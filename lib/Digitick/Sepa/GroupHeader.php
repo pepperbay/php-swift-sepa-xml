@@ -22,7 +22,7 @@
 
 namespace Digitick\Sepa;
 
-use Digitick\Sepa\DomBuilder\DomBuilderInterface;
+use Digitick\Common\DomBuilder\DomBuilderInterface;
 use Digitick\Sepa\Util\StringHelper;
 
 class GroupHeader

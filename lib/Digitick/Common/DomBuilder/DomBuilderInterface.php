@@ -31,7 +31,7 @@ use Digitick\Sepa\TransferInformation\TransferInformationInterface;
  * Used to build the Dom-structure for the different types of SEPA files
  *
  * Class DomBuilderInterface
- * @package Digitick\Sepa\DomBuilder
+ * @package Digitick\Common\DomBuilder
  */
 interface DomBuilderInterface
 {
