@@ -20,7 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa\TransferFile;
+namespace Digitick\Common\TransferFile;
 
 use Digitick\Common\DomBuilder\DomBuilderInterface;
 use Digitick\Common\Exception\InvalidTransferFileConfiguration;

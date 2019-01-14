@@ -26,6 +26,7 @@ use Digitick\Common\Exception\InvalidTransferFileConfiguration;
 use Digitick\Common\Exception\InvalidTransferTypeException;
 use Digitick\Common\PaymentInformation;
 use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
+use Digitick\Common\TransferFile\BaseTransferFile;
 
 class CustomerDirectDebitTransferFile extends BaseTransferFile
 {
