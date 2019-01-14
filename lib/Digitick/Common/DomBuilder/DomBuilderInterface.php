@@ -20,7 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa\DomBuilder;
+namespace Digitick\Common\DomBuilder;
 
 use Digitick\Sepa\GroupHeader;
 use Digitick\Sepa\PaymentInformation;
