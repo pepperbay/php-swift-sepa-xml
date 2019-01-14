@@ -39,7 +39,7 @@ $directDebit->asXML();
 ```php
 use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
 use Digitick\Sepa\PaymentInformation;
-use Digitick\Sepa\GroupHeader;
+use Digitick\Common\GroupHeader;
 
 //Set the custom header (Spanish banks example) information
 $header = new GroupHeader(date('Y-m-d-H-i-s'), 'Me');

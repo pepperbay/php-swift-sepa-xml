@@ -23,7 +23,7 @@
 namespace tests\Unit;
 
 use Digitick\Sepa\DomBuilder\DomBuilderFactory;
-use Digitick\Sepa\GroupHeader;
+use Digitick\Common\GroupHeader;
 use Digitick\Sepa\PaymentInformation;
 use Digitick\Sepa\TransferFile\CustomerCreditTransferFile;
 use Digitick\Sepa\TransferFile\CustomerDirectDebitTransferFile;

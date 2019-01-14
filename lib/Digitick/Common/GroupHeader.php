@@ -20,7 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa;
+namespace Digitick\Common;
 
 use Digitick\Common\DomBuilder\DomBuilderInterface;
 use Digitick\Common\Util\StringHelper;

@@ -20,10 +20,10 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa\TransferFile\Factory;
+namespace Digitick\Swift\TransferFile\Factory;
 
-use Digitick\Sepa\DomBuilder\CustomerCreditTransferDomBuilder;
-use Digitick\Sepa\DomBuilder\CustomerDirectDebitTransferDomBuilder;
+use Digitick\Swift\DomBuilder\CustomerCreditTransferDomBuilder;
+use Digitick\Swift\DomBuilder\CustomerDirectDebitTransferDomBuilder;
 use Digitick\Common\GroupHeader;
 use Digitick\Sepa\TransferFile\CustomerCreditTransferFile;
 use Digitick\Sepa\TransferFile\Facade\CustomerCreditFacade;

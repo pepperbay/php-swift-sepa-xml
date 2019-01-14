@@ -26,11 +26,53 @@ use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
 use Digitick\Sepa\TransferInformation\TransferInformationInterface;
 use Digitick\Sepa\PaymentInformation;
 use Digitick\Sepa\TransferFile\TransferFileInterface;
-use Digitick\Sepa\GroupHeader;
+use Digitick\Common\GroupHeader;
 use Digitick\Common\DomBuilder\BaseDomBuilder;
 
 /** @TODO */
-abstract class CustomerDirectDebitTransferDomBuilder extends BaseDomBuilder
+class CustomerDirectDebitTransferDomBuilder extends BaseDomBuilder
 {
+    /**
+     * Build the root of the document
+     *
+     * @param  TransferFileInterface $transferFile
+     * @return mixed
+     */
+    public function visitTransferFile(TransferFileInterface $transferFile)
+    {
+        //TODO
+    }
 
+    /**
+     * Crawl PaymentInformation containing the Transactions
+     *
+     * @param  PaymentInformation $paymentInformation
+     * @return mixed
+     */
+    public function visitPaymentInformation(PaymentInformation $paymentInformation)
+    {
+        //TODO
+    }
+
+    /**
+     * Crawl Transactions
+     *
+     * @param  TransferInformationInterface $transactionInformation
+     * @return mixed
+     */
+    public function visitTransferInformation(TransferInformationInterface $transactionInformation)
+    {
+        //TODO
+    }
+
+    /**
+     * Add the specific OrgId element for the format 'pain.008.001.02'
+     *
+     * @param  GroupHeader $groupHeader
+     * @return mixed
+     */
+    public function visitGroupHeader(GroupHeader $groupHeader)
+    {
+        //TODO
+    }
 }

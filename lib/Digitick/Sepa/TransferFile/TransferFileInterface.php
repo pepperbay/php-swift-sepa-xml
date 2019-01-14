@@ -22,7 +22,7 @@
 namespace Digitick\Sepa\TransferFile;
 
 use Digitick\Common\DomBuilder\DomBuilderInterface;
-use Digitick\Sepa\GroupHeader;
+use Digitick\Common\GroupHeader;
 
 interface TransferFileInterface
 {
