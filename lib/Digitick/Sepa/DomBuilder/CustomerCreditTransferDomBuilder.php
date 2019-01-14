@@ -27,6 +27,7 @@ use Digitick\Sepa\TransferFile\TransferFileInterface;
 use Digitick\Sepa\GroupHeader;
 use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
 use Digitick\Sepa\TransferInformation\TransferInformationInterface;
+use Digitick\Common\DomBuilder\BaseDomBuilder;
 
 /**
  * Class CustomerCreditTransferDomBuilder

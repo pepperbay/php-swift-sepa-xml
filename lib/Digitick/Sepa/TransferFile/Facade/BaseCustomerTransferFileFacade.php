@@ -22,7 +22,7 @@
 
 namespace Digitick\Sepa\TransferFile\Facade;
 
-use Digitick\Sepa\DomBuilder\BaseDomBuilder;
+use Digitick\Common\DomBuilder\BaseDomBuilder;
 use Digitick\Sepa\TransferFile\TransferFileInterface;
 
 abstract class BaseCustomerTransferFileFacade implements CustomerTransferFileFacadeInterface
@@ -33,7 +33,7 @@ abstract class BaseCustomerTransferFileFacade implements CustomerTransferFileFac
     protected $transferFile;
 
     /**
-     * @var \Digitick\Sepa\DomBuilder\BaseDomBuilder
+     * @var \Digitick\Common\DomBuilder\BaseDomBuilder
      */
     protected $domBuilder;
 
