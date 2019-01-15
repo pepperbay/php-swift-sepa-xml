@@ -9,10 +9,10 @@
 
 namespace tests\Unit;
 
-use Pepperbay\Common\Exception\InvalidArgumentException;
-use Pepperbay\Common\PaymentInformation;
-use Pepperbay\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
-use Pepperbay\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
+use Digitick\Common\Exception\InvalidArgumentException;
+use Digitick\Common\PaymentInformation;
+use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
+use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
 
 class SumOutputTest extends \PHPUnit_Framework_TestCase
 {
@@ -153,7 +153,7 @@ class SumOutputTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @expectedException \Pepperbay\Sepa\Exception\InvalidArgumentException
+     * @expectedException \Digitick\Sepa\Exception\InvalidArgumentException
      */
     public function exceptionIsThrownIfBcMathExtensionIsNotAvailableAndInputIsFloat()
     {

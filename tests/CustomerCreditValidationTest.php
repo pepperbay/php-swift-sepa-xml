@@ -2,7 +2,7 @@
 /**
  * SEPA file generator.
  *
- * @copyright © Pepperbay <www.digitick.net> 2012-2013
+ * @copyright © Digitick <www.digitick.net> 2012-2013
  * @copyright © Blage <www.blage.net> 2013
  * @license GNU Lesser General Public License v3.0
  *
@@ -22,11 +22,11 @@
 
 namespace tests;
 
-use Pepperbay\Sepa\DomBuilder\CustomerCreditTransferDomBuilder;
-use Pepperbay\Common\GroupHeader;
-use Pepperbay\Common\PaymentInformation;
-use Pepperbay\Common\TransferFile\CustomerCreditTransferFile;
-use Pepperbay\Sepa\TransferInformation\CustomerCreditTransferInformation;
+use Digitick\Sepa\DomBuilder\CustomerCreditTransferDomBuilder;
+use Digitick\Common\GroupHeader;
+use Digitick\Common\PaymentInformation;
+use Digitick\Common\TransferFile\CustomerCreditTransferFile;
+use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
 
 /**
  * Various schema validation tests.
@@ -133,7 +133,7 @@ class CustomerCreditValidationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test that a transferfile without Payments throws understandable exception
-     * @expectedException \Pepperbay\Sepa\Exception\InvalidTransferFileConfiguration
+     * @expectedException \Digitick\Sepa\Exception\InvalidTransferFileConfiguration
      *
      * @param string $schema
      *

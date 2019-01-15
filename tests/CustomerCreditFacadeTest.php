@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Pepperbay\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
+use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
 
 /**
  * Class CustomerCreditFacadeTest

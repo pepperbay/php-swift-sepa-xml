@@ -1,16 +1,15 @@
 {
-    "name": "ppb/sepa-swift-xml",
+    "name": "digitick/sepa-xml",
     "type": "library",
     "description": "Creates an XML file for a Single Euro Payments Area (SEPA) Credit Transfer.",
     "keywords": ["banking", "sepa", "xml"],
     "license": "LGPL-3.0-or-later",
-    "version": "1.4.1",
     "authors": [
         {
-            "name": "Mathias Charmet"
+            "name": "Ianaré Sévi"
         },
         {
-            "name": "Pepperbay",
+            "name": "Digitick, SA",
             "email": "info@digitick.net"
         },
         {
@@ -18,10 +17,9 @@
             "email": "s.rohweder@blage.net"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-0": {
-            "Pepperbay\\Sepa": "lib/"
+            "Digitick\\Sepa": "lib/"
         }
     },
     "require": {

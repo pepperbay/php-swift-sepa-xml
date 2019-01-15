@@ -2,7 +2,7 @@
 /**
  * SEPA file generator.
  *
- * @copyright © Pepperbay <www.digitick.net> 2012-2013
+ * @copyright © Digitick <www.digitick.net> 2012-2013
  * @copyright © Blage <www.blage.net> 2013
  * @license GNU Lesser General Public License v3.0
  *
@@ -22,8 +22,8 @@
 
 namespace tests;
 
-use Pepperbay\Common\PaymentInformation;
-use Pepperbay\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
+use Digitick\Common\PaymentInformation;
+use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
 
 class CustomerDirectDebitFacadeTest extends \PHPUnit_Framework_TestCase
 {
