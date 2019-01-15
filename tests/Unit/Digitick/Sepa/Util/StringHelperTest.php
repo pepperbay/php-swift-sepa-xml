@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Unit\Digitick\Sepa\Util;
+namespace Tests\Unit\Pepperbay\Sepa\Util;
 
-use Digitick\Common\Util\StringHelper;
+use Pepperbay\Common\Util\StringHelper;
 
 /**
  * Unit test for StringHelper

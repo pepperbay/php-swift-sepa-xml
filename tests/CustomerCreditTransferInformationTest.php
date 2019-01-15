@@ -2,7 +2,7 @@
 
 namespace tests;
 
-use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
+use Pepperbay\Sepa\TransferInformation\CustomerCreditTransferInformation;
 
 class CustomerCreditTransferInformationTest extends \PHPUnit_Framework_TestCase
 {

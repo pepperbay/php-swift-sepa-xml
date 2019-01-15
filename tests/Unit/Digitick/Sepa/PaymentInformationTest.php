@@ -4,9 +4,9 @@
  * copyright 2017 blage.net Sören Rohweder
  */
 
-namespace Unit\Digitick\Sepa;
+namespace Unit\Pepperbay\Sepa;
 
-use Digitick\Common\PaymentInformation;
+use Pepperbay\Common\PaymentInformation;
 
 class PaymentInformationTest extends \PHPUnit_Framework_TestCase
 {
