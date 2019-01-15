@@ -26,7 +26,7 @@ use Digitick\Sepa\DomBuilder\CustomerCreditTransferDomBuilder;
 use Digitick\Common\GroupHeader;
 use Digitick\Common\PaymentInformation;
 use Digitick\Common\TransferFile\CustomerCreditTransferFile;
-use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
+use Digitick\Common\TransferInformation\CustomerCreditTransferInformation;
 
 /**
  * Various schema validation tests.

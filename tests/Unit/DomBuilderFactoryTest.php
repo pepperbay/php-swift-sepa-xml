@@ -27,7 +27,7 @@ use Digitick\Common\GroupHeader;
 use Digitick\Common\PaymentInformation;
 use Digitick\Common\TransferFile\CustomerCreditTransferFile;
 use Digitick\Common\TransferFile\CustomerDirectDebitTransferFile;
-use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
+use Digitick\Common\TransferInformation\CustomerCreditTransferInformation;
 use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
 
 class DomBuilderFactoryTest extends \PHPUnit_Framework_TestCase

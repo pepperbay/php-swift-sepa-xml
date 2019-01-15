@@ -20,9 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa\TransferInformation;
-
-use Digitick\Common\TransferInformation\BaseTransferInformation;
+namespace Digitick\Common\TransferInformation;
 
 class CustomerCreditTransferInformation extends BaseTransferInformation
 {

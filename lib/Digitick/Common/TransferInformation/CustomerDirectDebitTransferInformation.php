@@ -20,7 +20,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Digitick\Sepa\TransferInformation;
+namespace Digitick\Common\TransferInformation;
 
 use Digitick\Common\Util\StringHelper;
 use Digitick\Common\TransferInformation\BaseTransferInformation;

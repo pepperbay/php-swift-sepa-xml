@@ -4,7 +4,7 @@ namespace Digitick\Common\TransferFile\Facade;
 
 use Digitick\Common\Exception\InvalidArgumentException;
 use Digitick\Common\PaymentInformation;
-use Digitick\Sepa\TransferInformation\CustomerCreditTransferInformation;
+use Digitick\Common\TransferInformation\CustomerCreditTransferInformation;
 
 /**
  * Class CustomerCreditFacade
