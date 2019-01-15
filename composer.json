@@ -4,6 +4,7 @@
     "description": "Creates an XML file for a Single Euro Payments Area (SEPA) Credit Transfer.",
     "keywords": ["banking", "sepa", "xml"],
     "license": "LGPL-3.0-or-later",
+    "version": "1.4.2",
     "authors": [
         {
             "name": "Ianaré Sévi"
