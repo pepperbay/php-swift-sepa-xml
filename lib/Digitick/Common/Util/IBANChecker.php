@@ -10,8 +10,9 @@ class IBANChecker
         $IBAN = strtolower($IBAN);
         $countries = self::getCountriesIBANLengthArray();
         $chars = self::getCharsArray();
+        $countryCode = substr($IBAN, 0, 2);
 
-        if (strlen($IBAN) === $countries[substr($IBAN, 0, 2)]) {
+        if (array_key_exists($countryCode, $countries) && strlen($IBAN) === $countries[$countryCode]) {
             $movedChar = substr($IBAN, 4) . substr($IBAN, 0, 4);
             $movedCharArray = str_split($movedChar);
             $NewString = "";
