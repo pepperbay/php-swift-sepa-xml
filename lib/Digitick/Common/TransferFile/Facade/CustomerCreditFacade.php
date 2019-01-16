@@ -97,6 +97,11 @@ class CustomerCreditFacade extends BaseCustomerTransferFileFacade
             $transfer->setInstructionInformation($transferInformation['instructionInformation']);
         }
 
+        if (isset($transferInformation['country'])) {
+            $transfer->setCountry($transferInformation['country']);
+        }
+
+
         $this->payments[$paymentName]->addTransfer($transfer);
 
         return $transfer;
