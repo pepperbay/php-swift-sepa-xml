@@ -93,6 +93,10 @@ class CustomerCreditFacade extends BaseCustomerTransferFileFacade
             $transfer->setPostalAddress(array($transferInformation['postalAdress'],$transferInformation['cityZip']));
         }
 
+        if (isset($transferInformation['instructionInformation'])) {
+            $transfer->setInstructionInformation($transferInformation['instructionInformation']);
+        }
+
         $this->payments[$paymentName]->addTransfer($transfer);
 
         return $transfer;

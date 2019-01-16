@@ -100,6 +100,9 @@ class BaseTransferInformation implements TransferInformationInterface
      */
     protected $postalAddress;
 
+    /** @var string */
+    protected $instructionInformation;
+
     /**
      * @param string $amount
      * @param string $iban
@@ -290,4 +293,22 @@ class BaseTransferInformation implements TransferInformationInterface
     {
         $this->postalAddress = $postalAddress;
     }
+
+    /**
+     * @return string
+     */
+    public function getInstructionInformation()
+    {
+        return $this->instructionInformation;
+    }
+
+    /**
+     * @param string $instructionInformation
+     */
+    public function setInstructionInformation($instructionInformation)
+    {
+        $this->instructionInformation = $instructionInformation;
+    }
+
+
 }
