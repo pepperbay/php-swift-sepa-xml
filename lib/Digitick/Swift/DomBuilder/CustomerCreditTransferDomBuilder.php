@@ -212,7 +212,7 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
             $CdtTrfTxInf->appendChild($remittanceInformation);
         }
 
-        if (floatval($this->intToCurrency($transactionInformation->getTransferAmount())) >= 50000) {
+        if ((float) $this->intToCurrency($transactionInformation->getTransferAmount()) >= 50000) {
             $regulattoryReporting = $this->createElement('RgltryRptg');
             $details = $this->createElement('Dtls');
             $details->appendChild($this->createElement('Cd', 'E01'));
