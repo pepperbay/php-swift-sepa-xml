@@ -226,7 +226,10 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
 
         if (stripos($transactionInformation->getBic(), 'EA', 5) !== false) {
             $CdtTrfTxInf->appendChild($this->createElement('InstrForCdtrAgt')
-                ->appendChild($this->createElement('InstrInf', 'GBS')));
+                ->appendChild($this->createElement(
+                    'InstrInf',
+                    '/RES/' . $transactionInformation->getInstructionInformation()
+                )));
         }
 
 
