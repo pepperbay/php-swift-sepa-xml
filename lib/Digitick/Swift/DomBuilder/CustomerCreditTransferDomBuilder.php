@@ -91,16 +91,14 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
             $paymentTypeInformation->appendChild($instructionPriority);
         }
 
-        $serviceLevel = $this->createElement('SvcLvl');
-        $serviceLevel->appendChild($this->createElement('Cd', 'SEPA'));
-
-        $paymentTypeInformation->appendChild($serviceLevel);
         if ($paymentInformation->getCategoryPurposeCode()) {
             $categoryPurpose = $this->createElement('CtgyPurp');
             $categoryPurpose->appendChild($this->createElement('Cd', $paymentInformation->getCategoryPurposeCode()));
             $paymentTypeInformation->appendChild($categoryPurpose);
         }
-        $this->currentPayment->appendChild($paymentTypeInformation);
+        if ($paymentInformation->getCategoryPurposeCode() || $paymentInformation->getInstructionPriority()) {
+            $this->currentPayment->appendChild($paymentTypeInformation);
+        }
 
         if ($paymentInformation->getLocalInstrumentCode()) {
             $localInstrument = $this->createElement('LclInstr');
@@ -213,7 +211,8 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
             $remittanceInformation = $this->getRemittenceElement($transactionInformation->getRemittanceInformation());
             $CdtTrfTxInf->appendChild($remittanceInformation);
         }
-        if ($transactionInformation->getTransferAmount() >= 50000) {
+
+        if (floatval($this->intToCurrency($transactionInformation->getTransferAmount())) >= 50000) {
             $regulattoryReporting = $this->createElement('RgltryRptg');
             $details = $this->createElement('Dtls');
             $details->appendChild($this->createElement('Cd', 'E01'));
@@ -223,12 +222,7 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
 
         if (stripos($transactionInformation->getBic(), 'EA', 5) !== false) {
             $InstrForCdtrAgt = $this->createElement('InstrForCdtrAgt');
-            $InstrForCdtrAgt->appendChild(
-                $this->createElement(
-                    'InstrInf',
-                    '/RES/' . $transactionInformation->getInstructionInformation()
-                )
-            );
+            $InstrForCdtrAgt->appendChild($this->createElement('InstrInf','/RES/' . $transactionInformation->getInstructionInformation()));
             $CdtTrfTxInf->appendChild($InstrForCdtrAgt);
         }
 
