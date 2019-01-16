@@ -14,7 +14,7 @@ class CustomerCreditFacade extends BaseCustomerTransferFileFacade
 
     /**
      * @param string $paymentName
-     * @param array  $paymentInformation
+     * @param array $paymentInformation
      *
      * @throws InvalidArgumentException
      *
@@ -26,7 +26,7 @@ class CustomerCreditFacade extends BaseCustomerTransferFileFacade
             throw new InvalidArgumentException(sprintf('Payment with the name %s already exists', $paymentName));
         }
 
-        $originAgentBic = (isset ($paymentInformation['debtorAgentBIC'])) ? $paymentInformation['debtorAgentBIC'] : NULL;
+        $originAgentBic = isset($paymentInformation['debtorAgentBIC']) ? $paymentInformation['debtorAgentBIC'] : null;
         $payment = new PaymentInformation(
             $paymentInformation['id'],
             $paymentInformation['debtorAccountIBAN'],
@@ -42,7 +42,7 @@ class CustomerCreditFacade extends BaseCustomerTransferFileFacade
 
     /**
      * @param string $paymentName
-     * @param array  $transferInformation
+     * @param array $transferInformation
      *
      * @throws InvalidArgumentException
      *
@@ -80,9 +80,17 @@ class CustomerCreditFacade extends BaseCustomerTransferFileFacade
                 $this->payments[$paymentName]->getId() . count($this->payments[$paymentName]->getTransfers())
             );
         }
-        
+
         if (isset($transferInformation['instructionId'])) {
             $transfer->setInstructionId($transferInformation['instructionId']);
+        }
+
+        if (isset($transferInformation['currency'])) {
+            $transfer->setCurrency($transferInformation['currency']);
+        }
+
+        if (isset($transferInformation['postalAdress'], $transferInformation['cityZip'])) {
+            $transfer->setPostalAddress(array($transferInformation['postalAdress'],$transferInformation['cityZip']));
         }
 
         $this->payments[$paymentName]->addTransfer($transfer);

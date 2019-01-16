@@ -28,6 +28,7 @@ use Digitick\Common\GroupHeader;
 use Digitick\Common\TransferInformation\CustomerCreditTransferInformation;
 use Digitick\Common\TransferInformation\TransferInformationInterface;
 use Digitick\Common\DomBuilder\BaseDomBuilder;
+use Digitick\Common\Util\IBANChecker;
 
 /**
  * Class CustomerCreditTransferDomBuilder
@@ -70,7 +71,10 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
         $this->currentPayment->appendChild($this->createElement('PmtMtd', $paymentInformation->getPaymentMethod()));
 
         if ($paymentInformation->getBatchBooking() !== null) {
-            $this->currentPayment->appendChild($this->createElement('BtchBookg', $paymentInformation->getBatchBooking() ? 'true' : 'false'));
+            $this->currentPayment->appendChild($this->createElement(
+                'BtchBookg',
+                $paymentInformation->getBatchBooking() ? 'true' : 'false'
+            ));
         }
 
         $this->currentPayment->appendChild(
@@ -109,10 +113,12 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
         $debtor->appendChild($this->createElement('Nm', $paymentInformation->getOriginName()));
         $this->currentPayment->appendChild($debtor);
 
-        if ($paymentInformation->getOriginBankPartyIdentification() !== null && $this->painFormat === 'pain.001.001.03') {
+        if ($paymentInformation->getOriginBankPartyIdentification() !== null &&
+            $this->painFormat === 'pain.001.001.03') {
             $organizationId = $this->getOrganizationIdentificationElement(
                 $paymentInformation->getOriginBankPartyIdentification(),
-                $paymentInformation->getOriginBankPartyIdentificationScheme());
+                $paymentInformation->getOriginBankPartyIdentificationScheme()
+            );
 
             $debtor->appendChild($organizationId);
         }
@@ -175,7 +181,9 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
         $creditor->appendChild($this->createElement('Nm', $transactionInformation->getCreditorName()));
 
         // Creditor address if needed and supported by schema.
-        if (in_array($this->painFormat, array('pain.001.001.03'))) {
+        if (in_array($this->painFormat, array('pain.001.001.03')) &&
+            ($transactionInformation->getCurrency() === 'USD' ||
+                stripos($transactionInformation->getBic(), 'US', 4) !== false)) {
             $this->appendAddressToDomElement($creditor, $transactionInformation);
         }
 
@@ -184,8 +192,20 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
         // CreditorAccount 2.80
         $creditorAccount = $this->createElement('CdtrAcct');
         $id = $this->createElement('Id');
-        $id->appendChild($this->createElement('IBAN', $transactionInformation->getIban()));
-        $creditorAccount->appendChild($id);
+
+        //checking if is IBAN  of BBAN
+        if (IBANChecker::isIBAN($transactionInformation->getIban())) {
+            $id->appendChild($this->createElement('IBAN', $transactionInformation->getIban()));
+            $creditorAccount->appendChild($id);
+        } else {
+            $id->appendChild(
+                $this->createElement(
+                    'Othr',
+                    $this->createElement('Id', $transactionInformation->getIban())
+                )
+            );
+        }
+
         $CdtTrfTxInf->appendChild($creditorAccount);
 
         // remittance 2.98 2.99
@@ -204,10 +224,11 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
             $CdtTrfTxInf->appendChild($regulattoryReporting);
         }
 
-        if (strpos($transactionInformation->getBic(), 'EA') !== false) {
-            $InstrForCdtrAgt = $this->createElement('InstrForCdtrAgt')
-                ->appendChild($this->createElement('InstrInf', 'GBS'));
+        if (stripos($transactionInformation->getBic(), 'EA', 5) !== false) {
+            $CdtTrfTxInf->appendChild($this->createElement('InstrForCdtrAgt')
+                ->appendChild($this->createElement('InstrInf', 'GBS')));
         }
+
 
         $this->currentPayment->appendChild($CdtTrfTxInf);
     }
@@ -226,7 +247,8 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
             $organizationId = $this->getOrganizationIdentificationElement(
                 $groupHeader->getInitiatingPartyId(),
                 $groupHeader->getInitiatingPartyIdentificationScheme(),
-                $groupHeader->getIssuer());
+                $groupHeader->getIssuer()
+            );
 
             $xpath = new \DOMXpath($this->doc);
             $items = $xpath->query('GrpHdr/InitgPty/Id', $this->currentTransfer);
@@ -239,16 +261,16 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
     /**
      * Creates Id element used in Group header and Debtor elements.
      *
-     * @param  string      $id         Unique and unambiguous identification of a party. Length 1-35
+     * @param  string $id Unique and unambiguous identification of a party. Length 1-35
      * @param  string|null $schemeCode Name of the identification scheme. Length 1-4 or null
-     * @param  string|null $issr       Issuer
+     * @param  string|null $issr Issuer
      * @return \DOMElement
      */
     protected function getOrganizationIdentificationElement($id, $schemeCode = null, $issr = null)
     {
         $newId = $this->createElement('Id');
         $orgId = $this->createElement('OrgId');
-        $othr  = $this->createElement('Othr');
+        $othr = $this->createElement('Othr');
         $othr->appendChild($this->createElement('Id', $id));
 
         if ($issr) {
@@ -274,8 +296,10 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
      * @param \DOMElement $creditor
      * @param CustomerCreditTransferInformation $transactionInformation
      */
-    protected function appendAddressToDomElement(\DOMElement $creditor, CustomerCreditTransferInformation $transactionInformation)
-    {
+    protected function appendAddressToDomElement(
+        \DOMElement $creditor,
+        CustomerCreditTransferInformation $transactionInformation
+    ) {
         if (!$transactionInformation->getCountry() && !$transactionInformation->getPostalAddress()) {
             return; // No address exists, nothing to do.
         }

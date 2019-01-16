@@ -42,8 +42,11 @@ class TransferFileFacadeFactory
      *
      * @return CustomerDirectDebitFacade
      */
-    public static function createDirectDebit($uniqueMessageIdentification, $initiatingPartyName, $painFormat = 'pain.008.002.02')
-    {
+    public static function createDirectDebit(
+        $uniqueMessageIdentification,
+        $initiatingPartyName,
+        $painFormat = 'pain.008.002.02'
+    ) {
         $groupHeader = new GroupHeader($uniqueMessageIdentification, $initiatingPartyName);
 
         return self::createDirectDebitWithGroupHeader($groupHeader, $painFormat);
@@ -51,13 +54,16 @@ class TransferFileFacadeFactory
 
     /**
      * @param GroupHeader $groupHeader
-     * @param string      $painFormat
+     * @param string $painFormat
      *
      * @return CustomerDirectDebitFacade
      */
     public static function createDirectDebitWithGroupHeader(GroupHeader $groupHeader, $painFormat = 'pain.008.002.02')
     {
-        return new CustomerDirectDebitFacade(new CustomerDirectDebitTransferFile($groupHeader), new CustomerDirectDebitTransferDomBuilder($painFormat));
+        return new CustomerDirectDebitFacade(
+            new CustomerDirectDebitTransferFile($groupHeader),
+            new CustomerDirectDebitTransferDomBuilder($painFormat)
+        );
     }
 
     /**
@@ -67,8 +73,11 @@ class TransferFileFacadeFactory
      *
      * @return CustomerCreditFacade
      */
-    public static function createCustomerCredit($uniqueMessageIdentification, $initiatingPartyName, $painFormat = 'pain.001.002.03')
-    {
+    public static function createCustomerCredit(
+        $uniqueMessageIdentification,
+        $initiatingPartyName,
+        $painFormat = 'pain.001.002.03'
+    ) {
         $groupHeader = new GroupHeader($uniqueMessageIdentification, $initiatingPartyName);
 
         return self::createCustomerCreditWithGroupHeader($groupHeader, $painFormat);
@@ -76,12 +85,17 @@ class TransferFileFacadeFactory
 
     /**
      * @param GroupHeader $groupHeader
-     * @param string      $painFormat
+     * @param string $painFormat
      *
      * @return CustomerCreditFacade
      */
-    public static function createCustomerCreditWithGroupHeader(GroupHeader $groupHeader, $painFormat = 'pain.001.002.03')
-    {
-        return new CustomerCreditFacade(new CustomerCreditTransferFile($groupHeader), new CustomerCreditTransferDomBuilder($painFormat));
+    public static function createCustomerCreditWithGroupHeader(
+        GroupHeader $groupHeader,
+        $painFormat = 'pain.001.002.03'
+    ) {
+        return new CustomerCreditFacade(
+            new CustomerCreditTransferFile($groupHeader),
+            new CustomerCreditTransferDomBuilder($painFormat)
+        );
     }
 }
