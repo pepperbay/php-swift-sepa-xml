@@ -196,16 +196,13 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
         //checking if is IBAN  of BBAN
         if (IBANChecker::isIBAN($transactionInformation->getIban())) {
             $id->appendChild($this->createElement('IBAN', $transactionInformation->getIban()));
-            $creditorAccount->appendChild($id);
         } else {
-            $id->appendChild(
-                $this->createElement(
-                    'Othr',
-                    $this->createElement('Id', $transactionInformation->getIban())
-                )
-            );
+            $other = $this->createElement('Othr');
+            $other->appendChild($this->createElement('Id', $transactionInformation->getIban()));
+            $id->appendChild($other);
         }
 
+        $creditorAccount->appendChild($id);
         $CdtTrfTxInf->appendChild($creditorAccount);
 
         // remittance 2.98 2.99
@@ -225,11 +222,14 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
         }
 
         if (stripos($transactionInformation->getBic(), 'EA', 5) !== false) {
-            $CdtTrfTxInf->appendChild($this->createElement('InstrForCdtrAgt')
-                ->appendChild($this->createElement(
+            $InstrForCdtrAgt = $this->createElement('InstrForCdtrAgt');
+            $InstrForCdtrAgt->appendChild(
+                $this->createElement(
                     'InstrInf',
                     '/RES/' . $transactionInformation->getInstructionInformation()
-                )));
+                )
+            );
+            $CdtTrfTxInf->appendChild($InstrForCdtrAgt);
         }
 
 
