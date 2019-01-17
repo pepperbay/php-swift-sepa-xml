@@ -23,8 +23,19 @@ class IBANChecker
                 }
                 $NewString .= $movedCharArray[$key];
             }
-            return bcmod($NewString, '97') === 1;
 
+            $x = $NewString;
+            $y = '97';
+            $take = 5;
+            $mod = '';
+
+            do {
+                $a = (int)$mod . substr($x, 0, $take);
+                $x = substr($x, $take);
+                $mod = $a % $y;
+            } while (strlen($x));
+
+            return (int)$mod == 1;
         } else {
             return false;
         }
