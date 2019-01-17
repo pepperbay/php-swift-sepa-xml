@@ -27,7 +27,7 @@ class CustomerDirectDebitTransferInformationTest extends \PHPUnit_Framework_Test
      */
     public function hasAmendmentReturnsTrueForAmendments()
     {
-        $transferInformation = new \Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation(
+        $transferInformation = new \Digitick\Common\TransferInformation\CustomerDirectDebitTransferInformation(
             100,
             'DE89370400440532013000',
             'Me'

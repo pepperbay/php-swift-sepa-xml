@@ -9,10 +9,9 @@
 
 namespace tests\Unit;
 
-use Digitick\Common\Exception\InvalidArgumentException;
 use Digitick\Common\PaymentInformation;
 use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
-use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
+use Digitick\Common\TransferInformation\CustomerDirectDebitTransferInformation;
 
 class SumOutputTest extends \PHPUnit_Framework_TestCase
 {
