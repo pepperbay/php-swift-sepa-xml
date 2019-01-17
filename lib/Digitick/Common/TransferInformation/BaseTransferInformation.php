@@ -112,6 +112,14 @@ class BaseTransferInformation implements TransferInformationInterface
      */
     public function __construct($amount, $iban, $name)
     {
+        $amount += 0;
+        if (is_float($amount)) {
+            if (!function_exists('bcscale')) {
+                throw new InvalidArgumentException('Using floats for amount is only possible with bcmath enabled');
+            }
+            bcscale(2);
+            $amount = (integer)bcmul(sprintf('%01.4F', $amount), '100');
+        }
         $this->transferAmount = $amount;
         $this->iban = $iban;
         $this->name = StringHelper::sanitizeString($name);
