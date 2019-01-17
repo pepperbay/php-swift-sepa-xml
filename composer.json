@@ -1,5 +1,5 @@
 {
-    "name": "ppb/sepa-swift-xml",
+    "name": "pepperbay/sepa-swift-xml",
     "type": "library",
     "description": "Creates an XML file for a Single Euro Payments Area (SEPA) Credit Transfer.",
     "keywords": ["banking", "sepa", "xml"],
