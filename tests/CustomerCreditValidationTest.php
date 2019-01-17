@@ -133,7 +133,7 @@ class CustomerCreditValidationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * Test that a transferfile without Payments throws understandable exception
-     * @expectedException \Digitick\Sepa\Exception\InvalidTransferFileConfiguration
+     * @expectedException \Digitick\Common\Exception\InvalidTransferFileConfiguration
      *
      * @param string $schema
      *

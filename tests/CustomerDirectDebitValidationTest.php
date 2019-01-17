@@ -143,7 +143,7 @@ class CustomerDirectDebitValidationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Digitick\Sepa\Exception\InvalidTransferFileConfiguration
+     * @expectedException \Digitick\Common\Exception\InvalidTransferFileConfiguration
      * @expectedExceptionMessage Payment must contain a SequenceType
      *
      * @param string $schema
@@ -167,7 +167,7 @@ class CustomerDirectDebitValidationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Digitick\Sepa\Exception\InvalidTransferFileConfiguration
+     * @expectedException \Digitick\Common\Exception\InvalidTransferFileConfiguration
      * @expectedExceptionMessage Payment must contain a CreditorSchemeId
      *
      * @param string $schema

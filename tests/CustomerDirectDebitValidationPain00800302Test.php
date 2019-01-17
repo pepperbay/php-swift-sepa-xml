@@ -144,7 +144,7 @@ class CustomerDirectDebitValidationPain00800302Test extends \PHPUnit_Framework_T
     }
 
     /**
-     * @expectedException \Digitick\Sepa\Exception\InvalidTransferFileConfiguration
+     * @expectedException \Digitick\Common\Exception\InvalidTransferFileConfiguration
      * @expectedExceptionMessage Payment must contain a SequenceType
      */
     public function testValidationFailureSeqType()
@@ -164,7 +164,7 @@ class CustomerDirectDebitValidationPain00800302Test extends \PHPUnit_Framework_T
     }
 
     /**
-     * @expectedException \Digitick\Sepa\Exception\InvalidTransferFileConfiguration
+     * @expectedException \Digitick\Common\Exception\InvalidTransferFileConfiguration
      * @expectedExceptionMessage Payment must contain a CreditorSchemeId
      */
     public function testValidationFailureCreditorId()

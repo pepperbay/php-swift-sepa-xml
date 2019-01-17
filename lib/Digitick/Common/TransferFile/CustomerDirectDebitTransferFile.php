@@ -25,7 +25,7 @@ namespace Digitick\Common\TransferFile;
 use Digitick\Common\Exception\InvalidTransferFileConfiguration;
 use Digitick\Common\Exception\InvalidTransferTypeException;
 use Digitick\Common\PaymentInformation;
-use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
+use Digitick\Common\TransferInformation\CustomerDirectDebitTransferInformation;
 
 class CustomerDirectDebitTransferFile extends BaseTransferFile
 {
@@ -42,7 +42,7 @@ class CustomerDirectDebitTransferFile extends BaseTransferFile
     /**
      * validate the transferfile
      *
-     * @throws \Digitick\Sepa\Exception\InvalidTransferTypeException
+     * @throws \Digitick\Common\Exception\InvalidTransferTypeException
      */
     public function validate()
     {
@@ -57,7 +57,7 @@ class CustomerDirectDebitTransferFile extends BaseTransferFile
             }
             foreach ($payment->getTransfers() as $transfer) {
                 if (!$transfer instanceof CustomerDirectDebitTransferInformation) {
-                    throw new InvalidTransferTypeException('Transfers must be of type \Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation instead of: ' . get_class(
+                    throw new InvalidTransferTypeException('Transfers must be of type \Digitick\Common\TransferInformation\CustomerDirectDebitTransferInformation instead of: ' . get_class(
                         $transfer
                     ));
                 }
