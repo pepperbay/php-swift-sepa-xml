@@ -24,7 +24,7 @@ namespace Digitick\Common\TransferFile\Facade;
 
 use Digitick\Common\Exception\InvalidArgumentException;
 use Digitick\Common\PaymentInformation;
-use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
+use Digitick\Common\TransferInformation\CustomerDirectDebitTransferInformation;
 use Digitick\Common\TransferInformation\TransferInformationInterface;
 
 class CustomerDirectDebitFacade extends BaseCustomerTransferFileFacade
