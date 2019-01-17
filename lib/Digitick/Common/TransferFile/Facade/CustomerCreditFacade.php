@@ -89,8 +89,8 @@ class CustomerCreditFacade extends BaseCustomerTransferFileFacade
             $transfer->setCurrency($transferInformation['currency']);
         }
 
-        if (isset($transferInformation['postalAdress'], $transferInformation['cityZip'])) {
-            $transfer->setPostalAddress(array($transferInformation['postalAdress'],$transferInformation['cityZip']));
+        if (isset($transferInformation['postalAddress'], $transferInformation['cityZip'])) {
+            $transfer->setPostalAddress(array($transferInformation['postalAddress'],$transferInformation['cityZip']));
         }
 
         if (isset($transferInformation['instructionInformation'])) {
