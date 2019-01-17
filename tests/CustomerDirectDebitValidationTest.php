@@ -22,13 +22,11 @@
 
 namespace tests;
 
-use Digitick\Sepa\DomBuilder\CustomerCreditTransferDomBuilder;
 use Digitick\Sepa\DomBuilder\CustomerDirectDebitTransferDomBuilder;
-use Digitick\Common\Exception\InvalidTransferFileConfiguration;
 use Digitick\Common\GroupHeader;
 use Digitick\Common\PaymentInformation;
 use Digitick\Common\TransferFile\CustomerDirectDebitTransferFile;
-use Digitick\Sepa\TransferInformation\CustomerDirectDebitTransferInformation;
+use Digitick\Common\TransferInformation\CustomerDirectDebitTransferInformation;
 
 class CustomerDirectDebitValidationTest extends \PHPUnit_Framework_TestCase
 {
