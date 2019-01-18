@@ -1,6 +1,7 @@
 
 
 ##Sample Usage CreditTransfer with Factory
+###For SEPA transfers
 ```php
 use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
 
@@ -27,7 +28,35 @@ $customerCredit->addTransfer('firstPayment', array(
 $customerCredit->asXML();
 ```
 
-##Extended Usage CreditTransfer
+
+###For SWIFT transfers
+```php
+use Digitick\Swift\TransferFile\Factory\TransferFileFacadeFactory;
+
+//Set the initial information
+$customerCredit = TransferFileFacadeFactory::createCustomerCredit('test123', 'Me');
+
+// create a payment, it's possible to create multiple payments,
+// "firstPayment" is the identifier for the transactions
+$customerCredit->addPaymentInfo('firstPayment', array(
+    'id'                      => 'firstPayment',
+    'debtorName'              => 'My Company',
+    'debtorAccountIBAN'       => 'FI1350001540000056',
+    'debtorAgentBIC'          => 'PSSTFRPPMON',
+));
+// Add a Single Transaction to the named payment
+$customerCredit->addTransfer('firstPayment', array(
+    'amount'                  => '500',
+    'creditorIban'            => 'FI1350001540000056',
+    'creditorBic'             => 'OKOYFIHH',
+    'creditorName'            => 'Their Company',
+    'remittanceInformation'   => 'Purpose of this credit transfer'
+));
+// Retrieve the resulting XML
+$customerCredit->asXML();
+```
+
+##Extended Usage CreditTransfer(for SEPA and Swift)
 ```php
 // Create the initiating information
 $groupHeader = new GroupHeader('SEPA File Identifier', 'Your Company Name');
@@ -55,6 +84,7 @@ $payment->addTransfer($transfer);
 $sepaFile->addPaymentInformation($payment);
 
 // Attach a dombuilder to the sepaFile to create the XML output
+//don't forget to use the good builder depending on the transfers (SEPA or Swift namespace)
 $domBuilder = DomBuilderFactory::createDomBuilder($sepaFile);
 
 // Or if you want to use the format 'pain.001.001.03' instead

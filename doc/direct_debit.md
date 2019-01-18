@@ -1,4 +1,4 @@
-##Sample Usage DirectDebit with Factory
+##Sample Usage DirectDebit with Factory (only for SEPA transfers)
 ```php
 use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
 use Digitick\Common\PaymentInformation;
@@ -35,7 +35,7 @@ $directDebit->addTransfer('firstPayment', array(
 $directDebit->asXML();
 ```
 
-##Sample Usage DirectDebit with Factory and Custom Header
+##Sample Usage DirectDebit with Factory and Custom Header (only for SEPA transfers)
 ```php
 use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
 use Digitick\Common\PaymentInformation;

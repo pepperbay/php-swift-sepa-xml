@@ -31,11 +31,11 @@ class DomBuilderFactory
     {
         $transferFileClass = get_class($transferFile);
         switch ($transferFileClass) {
-            case 'Digitick\Sepa\TransferFile\CustomerCreditTransferFile':
+            case 'Digitick\Common\TransferFile\CustomerCreditTransferFile':
                 $domBuilder = $painFormat ? new CustomerCreditTransferDomBuilder($painFormat) : new CustomerCreditTransferDomBuilder();
                 $transferFile->accept($domBuilder);
                 break;
-            case 'Digitick\Sepa\TransferFile\CustomerDirectDebitTransferFile':
+            case 'Digitick\Common\TransferFile\CustomerDirectDebitTransferFile':
                 //TODO
                 break;
             default:
