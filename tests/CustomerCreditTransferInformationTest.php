@@ -2,7 +2,7 @@
 
 namespace tests;
 
-use Digitick\Common\TransferInformation\CustomerCreditTransferInformation;
+use Pepperbay\Common\TransferInformation\CustomerCreditTransferInformation;
 
 class CustomerCreditTransferInformationTest extends \PHPUnit_Framework_TestCase
 {

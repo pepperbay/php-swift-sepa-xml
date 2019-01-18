@@ -2,7 +2,7 @@
 /**
  * SEPA file generator.
  *
- * @copyright © Digitick <www.digitick.net> 2012-2013
+ * @copyright © Pepperbay <www.digitick.net> 2012-2013
  * @copyright © Blage <www.blage.net> 2013
  * @license GNU Lesser General Public License v3.0
  *
@@ -22,13 +22,13 @@
 
 namespace tests\Unit;
 
-use Digitick\Sepa\DomBuilder\DomBuilderFactory;
-use Digitick\Common\GroupHeader;
-use Digitick\Common\PaymentInformation;
-use Digitick\Common\TransferFile\CustomerCreditTransferFile;
-use Digitick\Common\TransferFile\CustomerDirectDebitTransferFile;
-use Digitick\Common\TransferInformation\CustomerCreditTransferInformation;
-use Digitick\Common\TransferInformation\CustomerDirectDebitTransferInformation;
+use Pepperbay\Sepa\DomBuilder\DomBuilderFactory;
+use Pepperbay\Common\GroupHeader;
+use Pepperbay\Common\PaymentInformation;
+use Pepperbay\Common\TransferFile\CustomerCreditTransferFile;
+use Pepperbay\Common\TransferFile\CustomerDirectDebitTransferFile;
+use Pepperbay\Common\TransferInformation\CustomerCreditTransferInformation;
+use Pepperbay\Common\TransferInformation\CustomerDirectDebitTransferInformation;
 
 class DomBuilderFactoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -45,7 +45,7 @@ class DomBuilderFactoryTest extends \PHPUnit_Framework_TestCase
         $sepaFile->addPaymentInformation($paymentInformation);
 
         $domBuilder = DomBuilderFactory::createDomBuilder($sepaFile);
-        $this->assertInstanceOf('\Digitick\Sepa\DomBuilder\CustomerCreditTransferDomBuilder', $domBuilder);
+        $this->assertInstanceOf('\Pepperbay\Sepa\DomBuilder\CustomerCreditTransferDomBuilder', $domBuilder);
     }
 
     /**
@@ -65,6 +65,6 @@ class DomBuilderFactoryTest extends \PHPUnit_Framework_TestCase
         $sepaFile->addPaymentInformation($paymentInformation);
 
         $domBuilder = DomBuilderFactory::createDomBuilder($sepaFile);
-        $this->assertInstanceOf('\Digitick\Sepa\DomBuilder\CustomerDirectDebitTransferDomBuilder', $domBuilder);
+        $this->assertInstanceOf('\Pepperbay\Sepa\DomBuilder\CustomerDirectDebitTransferDomBuilder', $domBuilder);
     }
 }

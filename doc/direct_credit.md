@@ -3,7 +3,7 @@
 ##Sample Usage CreditTransfer with Factory
 ###For SEPA transfers
 ```php
-use Digitick\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
+use Pepperbay\Sepa\TransferFile\Factory\TransferFileFacadeFactory;
 
 //Set the initial information
 $customerCredit = TransferFileFacadeFactory::createCustomerCredit('test123', 'Me');
@@ -31,7 +31,7 @@ $customerCredit->asXML();
 
 ###For SWIFT transfers
 ```php
-use Digitick\Swift\TransferFile\Factory\TransferFileFacadeFactory;
+use Pepperbay\Swift\TransferFile\Factory\TransferFileFacadeFactory;
 
 //Set the initial information
 $customerCredit = TransferFileFacadeFactory::createCustomerCredit('test123', 'Me');

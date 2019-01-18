@@ -2,7 +2,7 @@
 /**
  * SEPA file generator.
  *
- * @copyright © Digitick <www.digitick.net> 2012-2013
+ * @copyright © Pepperbay <www.digitick.net> 2012-2013
  * @copyright © Blage <www.blage.net> 2013
  * @license GNU Lesser General Public License v3.0
  *
@@ -22,11 +22,11 @@
 
 namespace tests;
 
-use Digitick\Sepa\DomBuilder\CustomerDirectDebitTransferDomBuilder;
-use Digitick\Common\GroupHeader;
-use Digitick\Common\PaymentInformation;
-use Digitick\Common\TransferFile\CustomerDirectDebitTransferFile;
-use Digitick\Common\TransferInformation\CustomerDirectDebitTransferInformation;
+use Pepperbay\Sepa\DomBuilder\CustomerDirectDebitTransferDomBuilder;
+use Pepperbay\Common\GroupHeader;
+use Pepperbay\Common\PaymentInformation;
+use Pepperbay\Common\TransferFile\CustomerDirectDebitTransferFile;
+use Pepperbay\Common\TransferInformation\CustomerDirectDebitTransferInformation;
 
 class CustomerDirectDebitValidationPain00800302Test extends \PHPUnit_Framework_TestCase
 {
@@ -144,7 +144,7 @@ class CustomerDirectDebitValidationPain00800302Test extends \PHPUnit_Framework_T
     }
 
     /**
-     * @expectedException \Digitick\Common\Exception\InvalidTransferFileConfiguration
+     * @expectedException \Pepperbay\Common\Exception\InvalidTransferFileConfiguration
      * @expectedExceptionMessage Payment must contain a SequenceType
      */
     public function testValidationFailureSeqType()
@@ -164,7 +164,7 @@ class CustomerDirectDebitValidationPain00800302Test extends \PHPUnit_Framework_T
     }
 
     /**
-     * @expectedException \Digitick\Common\Exception\InvalidTransferFileConfiguration
+     * @expectedException \Pepperbay\Common\Exception\InvalidTransferFileConfiguration
      * @expectedExceptionMessage Payment must contain a CreditorSchemeId
      */
     public function testValidationFailureCreditorId()
