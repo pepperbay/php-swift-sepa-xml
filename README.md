@@ -59,6 +59,6 @@ Specific version, API stability
 * [ECB SEPA gateway page](http://www.ecb.europa.eu/paym/retpaym/html/index.en.html)
 * [SEPA for Corporates Blog](http://www.sepaforcorporates.com/)
 
-##Special Credits
+## Special Credits
 
 This package is based on the package [php-sepa-xml](https://github.com/php-sepa-xml/php-sepa-xml)
