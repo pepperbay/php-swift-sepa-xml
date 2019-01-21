@@ -36,7 +36,12 @@ In the "require" section of your composer.json file:
 
 Always up to date (bleeding edge, API *not* guaranteed stable)
 ```javascript
-"pepperbay/sepa-swift-xml" : "dev-master"
+"pepperbay/php-swift-sepa-xml" : "dev-master"
+```
+
+Specific version, API stability
+```javascript
+"pepperbay/php-swift-sepa-xml" : "2.0.*"
 ```
 ## Documentation
 
@@ -54,3 +59,6 @@ Always up to date (bleeding edge, API *not* guaranteed stable)
 * [ECB SEPA gateway page](http://www.ecb.europa.eu/paym/retpaym/html/index.en.html)
 * [SEPA for Corporates Blog](http://www.sepaforcorporates.com/)
 
+##Special Credits
+
+This package is based on the package [php-sepa-xml](https://github.com/php-sepa-xml/php-sepa-xml)
