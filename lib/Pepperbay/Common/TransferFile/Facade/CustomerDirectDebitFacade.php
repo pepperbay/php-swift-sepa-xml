@@ -49,19 +49,27 @@ class CustomerDirectDebitFacade extends BaseCustomerTransferFileFacade
         if (isset($this->payments[$paymentName])) {
             throw new InvalidArgumentException(sprintf('Payment with the name %s already exists', $paymentName));
         }
+
         $creditorAgentBIC = (isset ($paymentInformation['creditorAgentBIC'])) ? $paymentInformation['creditorAgentBIC'] : null;
+
         $payment = new PaymentInformation(
             $paymentInformation['id'],
             $paymentInformation['creditorAccountIBAN'],
             $creditorAgentBIC,
             $paymentInformation['creditorName']
         );
+
         $payment->setSequenceType($paymentInformation['seqType']);
         $payment->setCreditorId($paymentInformation['creditorId']);
+        $payment->setDueDate($this->createDueDateFromPaymentInformation($paymentInformation, '+5 day'));
+
         if (isset($paymentInformation['localInstrumentCode'])) {
             $payment->setLocalInstrumentCode($paymentInformation['localInstrumentCode']);
         }
-        $payment->setDueDate($this->createDueDateFromPaymentInformation($paymentInformation, '+5 day'));
+
+        if (isset($paymentInformation['instructionPriority'])) {
+            $payment->setInstructionPriority($paymentInformation['instructionPriority']);
+        }
 
         $this->payments[$paymentName] = $payment;
 

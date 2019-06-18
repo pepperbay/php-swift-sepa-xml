@@ -27,13 +27,19 @@ class CustomerCreditFacade extends BaseCustomerTransferFileFacade
         }
 
         $originAgentBic = isset($paymentInformation['debtorAgentBIC']) ? $paymentInformation['debtorAgentBIC'] : null;
+
         $payment = new PaymentInformation(
             $paymentInformation['id'],
             $paymentInformation['debtorAccountIBAN'],
             $originAgentBic,
             $paymentInformation['debtorName']
         );
+
         $payment->setDueDate($this->createDueDateFromPaymentInformation($paymentInformation));
+
+        if (isset($paymentInformation['instructionPriority'])) {
+            $payment->setInstructionPriority($paymentInformation['instructionPriority']);
+        }
 
         $this->payments[$paymentName] = $payment;
 
