@@ -49,6 +49,17 @@ class PaymentInformation
      */
     const S_FINAL = 'FNAL';
 
+
+    /**
+     * Instruction priority Normal
+     */
+    const INSTRUCTION_PRIORITY_NORMAL = 'NORM';
+
+    /**
+     * Instruction priority High
+     */
+    const INSTRUCTION_PRIORITY_HIGH = 'HIGH';
+
     /**
      * @var string Unambiguously identify the payment.
      */
@@ -236,7 +247,7 @@ class PaymentInformation
     public function setLocalInstrumentCode($localInstrumentCode)
     {
         $localInstrumentCode = strtoupper($localInstrumentCode);
-        if (!in_array($localInstrumentCode, array('B2B', 'CORE', 'COR1'))) {
+        if (!in_array($localInstrumentCode, ['B2B', 'CORE', 'COR1'])) {
             throw new InvalidArgumentException("Invalid Local Instrument Code: $localInstrumentCode");
         }
         $this->localInstrumentCode = $localInstrumentCode;
@@ -288,7 +299,7 @@ class PaymentInformation
     public function setInstructionPriority($instructionPriority)
     {
         $instructionPriority = strtoupper($instructionPriority);
-        if (!in_array($instructionPriority, array('NORM', 'HIGH'))) {
+        if (!in_array($instructionPriority, ['NORM', 'HIGH'])) {
             throw new InvalidArgumentException("Invalid Instruction Priority: $instructionPriority");
         }
         $this->instructionPriority = $instructionPriority;
