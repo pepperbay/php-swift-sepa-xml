@@ -203,6 +203,14 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
         $creditorAccount->appendChild($id);
         $CdtTrfTxInf->appendChild($creditorAccount);
 
+        if ((float) $this->intToCurrency($transactionInformation->getTransferAmount()) >= 50000) {
+            $regulattoryReporting = $this->createElement('RgltryRptg');
+            $details = $this->createElement('Dtls');
+            $details->appendChild($this->createElement('Cd', 'E01'));
+            $regulattoryReporting->appendChild($details);
+            $CdtTrfTxInf->appendChild($regulattoryReporting);
+        }
+        
         // remittance 2.98 2.99
         if (strlen($transactionInformation->getCreditorReference()) > 0) {
             $remittanceInformation = $this->getStructuredRemittanceElement($transactionInformation);
@@ -212,20 +220,11 @@ class CustomerCreditTransferDomBuilder extends BaseDomBuilder
             $CdtTrfTxInf->appendChild($remittanceInformation);
         }
 
-        if ((float) $this->intToCurrency($transactionInformation->getTransferAmount()) >= 50000) {
-            $regulattoryReporting = $this->createElement('RgltryRptg');
-            $details = $this->createElement('Dtls');
-            $details->appendChild($this->createElement('Cd', 'E01'));
-            $regulattoryReporting->appendChild($details);
-            $CdtTrfTxInf->appendChild($regulattoryReporting);
-        }
-
         if (stripos($transactionInformation->getBic(), 'EA', 5) !== false) {
             $InstrForCdtrAgt = $this->createElement('InstrForCdtrAgt');
             $InstrForCdtrAgt->appendChild($this->createElement('InstrInf','/RES/' . $transactionInformation->getInstructionInformation()));
             $CdtTrfTxInf->appendChild($InstrForCdtrAgt);
         }
-
 
         $this->currentPayment->appendChild($CdtTrfTxInf);
     }
